@@ -239,63 +239,114 @@
                             <p class="text-slate-500 text-sm">除了推論，我們有科學證據。</p>
                         </div>
                     </div>
-                    <div class="grid lg:grid-cols-2 gap-8 mb-12">
-                        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-                            <div class="aspect-[3/4] bg-slate-100 rounded-lg flex items-center justify-center relative overflow-hidden bg-slate-50">
+                    <div class="grid lg:grid-cols-2 gap-12 mb-12">
+                        
+                        <!-- Graph Container (Left) -->
+                        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm flex flex-col">
+                            <div class="aspect-[3/4] bg-slate-100 rounded-lg flex items-center justify-center relative overflow-hidden bg-slate-50 flex-grow">
                                 <img src="https://raw.githubusercontent.com/oceanicdayi/Earth_Heat/main/earth_temp_graph.png" onerror="this.onerror=null; this.src='earth_temp_graph.png';" alt="顯示隨深度變化的估計溫度和熔點圖表" class="w-full h-full object-contain">
                             </div>
-                            <p class="text-xs text-center text-slate-400 mt-2 italic">圖 4.14：地球內部估計溫度與熔點隨深度的變化。</p>
+                            <p class="text-xs text-center text-slate-400 mt-4 italic">圖 4.14：地球內部估計溫度（粗線）與熔點（細線）隨深度的變化。</p>
                         </div>
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-bold text-slate-800">解讀圖表</h3>
-                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
-                                <h4 class="font-bold text-blue-900 mb-1">溫度 vs. 固相線 (Solidus)</h4>
-                                <p class="text-sm text-blue-800 leading-relaxed">
-                                    圖表繪製了兩條關鍵曲線。<strong class="text-black">粗線</strong>是估計的實際溫度。<span class="text-slate-500">細線</span>是<strong>固相線</strong> (熔點)。
+
+                        <!-- Analysis (Right) - Enhanced Explanation -->
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                    <i data-lucide="microscope" class="w-5 h-5 text-blue-600"></i> 
+                                    深度解析：圖 4.14 的四個關鍵物理機制
+                                </h3>
+                                <p class="text-sm text-slate-600 mb-6">
+                                    這張圖不只顯示溫度，更解釋了為什麼地球內部會有「固態」與「液態」的分層，以及熱是如何傳輸的。
+                                </p>
+                            </div>
+
+                            <div class="space-y-6 relative before:absolute before:inset-y-0 before:left-4 before:w-0.5 before:bg-slate-200">
+                                
+                                <!-- Point 1: Lithosphere -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-0 top-1 w-8 h-8 bg-slate-100 rounded-full border-2 border-slate-300 flex items-center justify-center font-bold text-xs text-slate-600">1</div>
+                                    <h4 class="font-bold text-slate-800 text-sm">岩石圈 (0-100 km)：熱傳導主導</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        曲線在此處非常<strong>陡峭</strong>。因為岩石是熱的不良導體，熱量難以散去，導致溫度隨深度急劇上升（地熱梯度約 30°C/km）。
+                                    </p>
+                                </div>
+
+                                <!-- Point 2: Mantle -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-0 top-1 w-8 h-8 bg-orange-100 rounded-full border-2 border-orange-300 flex items-center justify-center font-bold text-xs text-orange-600">2</div>
+                                    <h4 class="font-bold text-slate-800 text-sm">地函 (100-2890 km)：絕熱對流</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        曲線變得<strong>平緩</strong>。地函雖然是固態，但在高溫高壓下像黏滯流體一樣對流。對流效率高，使溫度分布接近「絕熱梯度」(Adiabatic Gradient)，溫差主要由壓力變化引起。
+                                        <br><span class="text-orange-500">● 軟流圈 (Asthenosphere)：</span> 溫度曲線最接近熔點線 (Solidus)，導致岩石變軟，波速降低。
+                                    </p>
+                                </div>
+
+                                <!-- Point 3: CMB (D'') -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-0 top-1 w-8 h-8 bg-red-100 rounded-full border-2 border-red-300 flex items-center justify-center font-bold text-xs text-red-600">3</div>
+                                    <h4 class="font-bold text-slate-800 text-sm">核幔邊界 (D" 層, ~2900 km)</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        溫度出現<strong>急劇跳升</strong>。這是固態地函與液態外核的交界，熱量必須靠效率較低的「傳導」通過，形成熱邊界層，也是地函熱柱 (Plumes) 的發源地。
+                                        <br><span class="text-red-500 font-bold">→ 跨過這條線，物質熔化成液態鐵（溫度 > 熔點）。</span>
+                                    </p>
+                                </div>
+
+                                <!-- Point 4: Inner Core -->
+                                <div class="relative pl-10">
+                                    <div class="absolute left-0 top-1 w-8 h-8 bg-slate-800 rounded-full border-2 border-slate-600 flex items-center justify-center font-bold text-xs text-white">4</div>
+                                    <h4 class="font-bold text-slate-800 text-sm">內核邊界 (5150 km)：壓力凍結</h4>
+                                    <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                                        溫度曲線再次<strong>交叉並低於</strong>熔點線。雖然溫度高達 5000°C+，但極高的壓力迫使鐵原子排列成固態晶格（熔點隨壓力升高而升高）。
+                                        <br><span class="text-slate-800 font-bold">→ 內核因此是固態的。</span>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Methodology (Kept) -->
+                    <div class="bg-slate-900 text-slate-300 rounded-xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-3 opacity-10">
+                            <i data-lucide="microscope" class="w-32 h-32"></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mb-4">我們是如何得知的？</h3>
+                        <p class="mb-6 leading-relaxed">
+                            人類無法實際深入地下數公里。此圖表是結合<strong>「地震鑑識」</strong>與實驗室物理學建構而成的。
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Step 1 -->
+                            <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                                <div class="flex items-center gap-2 mb-2 text-indigo-400 font-bold">
+                                    <i data-lucide="activity" class="w-4 h-4"></i>
+                                    <span>1. 地震波 X 光</span>
+                                </div>
+                                <p class="text-sm">
+                                    地震將波傳送穿過地球。這些波在特定深度（400km, 670km）會反射或改變速度，揭示礦物結構發生變化（相變）的位置。
+                                </p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="bg-slate-800/50 p-4 rounded-lg border border-slate-700">
+                                <div class="flex items-center gap-2 mb-2 text-orange-400 font-bold">
+                                    <i data-lucide="flask-conical" class="w-4 h-4"></i>
+                                    <span>2. 實驗室高溫爐</span>
+                                </div>
+                                <p class="text-sm">
+                                    科學家在實驗室中（使用鑽石砧）重現這些深度的極高壓力，找出岩石熔化或發生相變所需的確切溫度。
                                 </p>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 7. Heat Transport -->
-        <section id="transport" class="pt-8">
-            <div class="transport-gradient p-1 rounded-3xl">
-                <div class="bg-white rounded-[20px] p-8 md:p-12">
-                    <div class="text-center mb-10">
-                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">動態地球</span>
-                        <h2 class="text-3xl font-bold mt-4 text-slate-900">熱傳輸與來源</h2>
-                        <p class="text-slate-600 mt-2">熱能如何在地球中移動及其起源。</p>
-                    </div>
-                    <div class="grid md:grid-cols-3 gap-6 mb-12">
-                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                            <h4 class="font-bold text-slate-900 mb-2">傳導 (Conduction)</h4>
-                            <p class="text-sm text-slate-600">通過物質接觸傳遞。在<strong>固體物質</strong>中占主導地位。</p>
-                        </div>
-                        <div class="bg-orange-50 p-6 rounded-xl border border-orange-200">
-                            <h4 class="font-bold text-slate-900 mb-2">對流 (Convection)</h4>
-                            <p class="text-sm text-slate-700">通過流體運動傳遞。在<strong>地函和液態地核</strong>中占主導地位。</p>
-                        </div>
-                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
-                            <h4 class="font-bold text-slate-900 mb-2">輻射 (Radiation)</h4>
-                            <p class="text-sm text-slate-600">最不重要的過程，僅在地核高溫區顯著。</p>
+                        <div class="mt-6 p-4 bg-indigo-900/30 border border-indigo-500/30 rounded-lg text-sm text-indigo-200 flex gap-3">
+                            <i data-lucide="lightbulb" class="w-5 h-5 shrink-0 mt-0.5"></i>
+                            <p><strong>結果：</strong>通過將地震波測得的<em>深度</em>與實驗室測得的<em>溫度</em>相匹配，我們無需鑽探到地核即可繪製出此圖表上的點。</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 8. Geothermal Power -->
-        <section id="geothermal" class="pt-8">
-            <div class="power-gradient p-1 rounded-3xl">
-                <div class="bg-white rounded-[20px] p-8 md:p-12">
-                    <div class="text-center mb-10">
-                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">應用地球科學</span>
-                        <h2 class="text-3xl font-bold mt-4 text-slate-900">地熱發電廠</h2>
-                        <p class="text-slate-600 mt-2">利用來自地核和放射性衰變的熱能。</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -309,159 +360,179 @@
                         <h2 class="text-3xl font-bold mt-4 text-slate-900">台灣的地熱能源</h2>
                         <p class="text-slate-600 mt-2">現況更新：2025 年 11 月</p>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 10. GeoTEX Platform -->
-        <section id="geotex" class="pt-8">
-            <div class="geotex-gradient rounded-3xl overflow-hidden shadow-lg p-8 md:p-12">
-                <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
-                    <div>
-                        <span class="bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">國家級資源</span>
-                        <h2 class="text-3xl font-bold mt-4 text-slate-900">地熱探勘資訊平台 (GeoTEX)</h2>
-                        <p class="text-slate-600 mt-2">經濟部地質調查及礦業管理中心建置的「地熱數位大腦」。</p>
-                    </div>
-                    <a href="https://geotex.geologycloud.tw/main" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition shadow-sm">
-                        <i data-lucide="external-link" class="w-4 h-4"></i> 前往平台
-                    </a>
-                </div>
-                <!-- Dashboard and Info -->
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Left Info -->
-                    <div class="lg:col-span-1 space-y-6">
-                        <div class="bg-white p-6 rounded-xl border border-sky-100 shadow-sm">
-                            <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-sky-600"></i> 核心使命</h3>
-                            <p class="text-sm text-slate-600"><strong>「探地熱，接地氣」</strong>：整合科技調查，公開地底的熱、通道、水汽三大秘密。</p>
-                        </div>
-                    </div>
-                    <!-- Center Right Dashboard -->
-                    <div class="lg:col-span-2 bg-white p-8 rounded-xl border border-sky-200 shadow-sm relative overflow-hidden">
-                        <div class="flex justify-between items-center mb-6 relative z-10">
-                            <h3 class="font-bold text-slate-900 flex items-center gap-2"><i data-lucide="activity" class="w-5 h-5 text-red-500 animate-pulse"></i> 即時鑽探監測數據 (2025)</h3>
-                        </div>
-                        <div class="space-y-5 relative z-10">
-                            <div>
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span class="font-bold text-slate-700">台北大屯山 (火山區)</span>
-                                    <span class="font-mono text-red-600 font-bold">245°C</span>
-                                </div>
-                                <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden">
-                                    <div class="bg-gradient-to-r from-orange-400 to-red-600 h-4 rounded-full" style="width: 100%"></div>
-                                    <span class="absolute right-2 top-[1px] text-[10px] text-white font-bold drop-shadow-md">深 1195m</span>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="flex justify-between text-sm mb-1">
-                                    <span class="font-bold text-slate-700">花蓮瑞穗二號井</span>
-                                    <span class="font-mono text-orange-500 font-bold">174°C</span>
-                                </div>
-                                <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden">
-                                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-4 rounded-full" style="width: 71%"></div>
-                                    <span class="absolute left-[73%] top-[1px] text-[10px] text-slate-500">深 478m</span>
+                    <!-- Intro & Potential -->
+                    <div class="bg-cyan-50 border border-cyan-100 p-6 rounded-xl mb-12">
+                        <div class="flex flex-col md:flex-row gap-6 items-center">
+                            <div class="flex-1">
+                                <h3 class="font-bold text-cyan-900 mb-2 text-lg">環太平洋火山帶的潛力</h3>
+                                <p class="text-sm text-cyan-900/80 leading-relaxed mb-4">
+                                    台灣位於板塊交界處，總地熱潛力估計達 <strong>30–33 GW</strong>。若完全開發，可滿足島上 20% 的電力需求。作為「2050 淨零排放」策略的一部分，開發進度在 2025 年底加速進行。
+                                </p>
+                                <div class="grid grid-cols-3 gap-4 text-center">
+                                    <div class="bg-white p-2 rounded shadow-sm">
+                                        <div class="text-xs text-slate-500">資源潛力</div>
+                                        <div class="font-bold text-slate-800">30+ GW</div>
+                                    </div>
+                                    <div class="bg-white p-2 rounded shadow-sm">
+                                        <div class="text-xs text-slate-500">目前容量</div>
+                                        <div class="font-bold text-slate-800">~7-8 MW</div>
+                                    </div>
+                                    <div class="bg-white p-2 rounded shadow-sm">
+                                        <div class="text-xs text-slate-500">2050 目標</div>
+                                        <div class="font-bold text-slate-800">6 GW</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- ============================================================================ -->
-        <!-- NEW: Jieyuan Energy (Industry Example) -->
-        <!-- ============================================================================ -->
-        <section id="jieyuan" class="pt-8">
-            <div class="jieyuan-gradient rounded-3xl overflow-hidden shadow-xl ring-1 ring-purple-500/50 p-8 md:p-12">
-                
-                <!-- Header -->
-                <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-10 border-b border-purple-400/30 pb-8">
-                    <div>
-                        <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide shadow-md">產業先驅</span>
-                        <h2 class="text-3xl font-bold mt-4 text-white tracking-tight">結元能源開發 (Jieyuan Energy)</h2>
-                        <p class="text-purple-200 mt-2 font-light">將捷集團旗下 · 台灣地熱發電領導者</p>
-                    </div>
-                    <a href="https://www.fabulousgroup.com.tw/jy" target="_blank" class="bg-white text-purple-900 hover:bg-purple-100 px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition shadow-lg">
-                        <i data-lucide="external-link" class="w-4 h-4"></i> 訪問官網
-                    </a>
-                </div>
-
-                <!-- Core Vision -->
-                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-10 border border-white/10">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-purple-500/20 p-3 rounded-lg shrink-0 text-purple-300">
-                            <i data-lucide="lightbulb" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white mb-2">企業願景與實力</h3>
-                            <p class="text-purple-100 text-sm leading-relaxed">
-                                專注於地熱發電的研究開發與整合創新。目標是成立台灣首座完全商轉的地熱電廠，並推動<strong>「地熱發電技術自主化」</strong>，減少對國外技術的依賴。擁有從探勘、規劃、興建到營運維護的一站式服務能力。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8">
-                    
-                    <!-- Key Projects -->
-                    <div class="space-y-6">
-                        <h3 class="font-bold text-white flex items-center gap-2 text-lg border-l-4 border-purple-400 pl-3">
-                            指標性專案
+                    <!-- NEW SUPPLEMENT: Regional Analysis -->
+                    <div class="mb-12">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                            <i data-lucide="map" class="w-5 h-5 text-cyan-600"></i> 台灣兩大地熱系統比較
                         </h3>
-                        
-                        <!-- Project 1 -->
-                        <div class="bg-purple-900/40 rounded-lg p-5 border border-purple-500/30 hover:bg-purple-900/60 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h4 class="font-bold text-white">宜蘭清水地熱發電 (BOT+ROT)</h4>
-                                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">已商轉</span>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <!-- Volcanic System -->
+                            <div class="bg-red-50 p-5 rounded-xl border border-red-100 relative overflow-hidden group">
+                                <div class="absolute -right-4 -top-4 w-24 h-24 bg-red-100 rounded-full opacity-50 group-hover:scale-150 transition duration-500"></div>
+                                <h4 class="font-bold text-red-900 mb-2 text-lg relative z-10">1. 火山地熱系統</h4>
+                                <div class="text-sm text-red-800 space-y-2 relative z-10">
+                                    <p><strong>代表區域：</strong>大屯火山群 (新北)</p>
+                                    <p><strong>特徵：</strong></p>
+                                    <ul class="list-disc list-inside pl-2 space-y-1 text-xs">
+                                        <li>熱源來自淺層岩漿庫，溫度極高。</li>
+                                        <li>GeoTEX 實測：<strong>245°C</strong> (深度 1195m)。</li>
+                                        <li><strong>挑戰：</strong>流體呈強酸性 (pH 1-2)，極易腐蝕管線設備。需特殊抗酸水泥與套管技術 (結元能源專長)。</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <p class="text-sm text-purple-200 mb-3">
-                                台灣首座商轉地熱電廠。引進以色列 ORMAT 發電機組，並進行地熱井產能恢復工程。
-                            </p>
-                            <div class="flex gap-2 text-xs text-purple-300">
-                                <span class="bg-white/10 px-2 py-1 rounded">4.2 MW</span>
-                                <span class="bg-white/10 px-2 py-1 rounded">雙循環系統</span>
-                            </div>
-                        </div>
 
-                        <!-- Project 2 -->
-                        <div class="bg-purple-900/40 rounded-lg p-5 border border-purple-500/30 hover:bg-purple-900/60 transition">
-                            <div class="flex justify-between items-start mb-2">
-                                <h4 class="font-bold text-white">新北硫磺子坪 (示範區)</h4>
-                                <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">開發中</span>
-                            </div>
-                            <p class="text-sm text-purple-200 mb-3">
-                                位於大屯火山區。進行高難度的火山地質探勘，採用 5000M 級鑽機進行深層鑽探。
-                            </p>
-                            <div class="flex gap-2 text-xs text-purple-300">
-                                <span class="bg-white/10 px-2 py-1 rounded">抗酸腐蝕技術</span>
-                                <span class="bg-white/10 px-2 py-1 rounded">產能試驗</span>
+                            <!-- Metamorphic System -->
+                            <div class="bg-blue-50 p-5 rounded-xl border border-blue-100 relative overflow-hidden group">
+                                <div class="absolute -right-4 -top-4 w-24 h-24 bg-blue-100 rounded-full opacity-50 group-hover:scale-150 transition duration-500"></div>
+                                <h4 class="font-bold text-blue-900 mb-2 text-lg relative z-10">2. 變質岩地熱系統</h4>
+                                <div class="text-sm text-blue-800 space-y-2 relative z-10">
+                                    <p><strong>代表區域：</strong>宜蘭清水、仁澤、花蓮瑞穗</p>
+                                    <p><strong>特徵：</strong></p>
+                                    <ul class="list-disc list-inside pl-2 space-y-1 text-xs">
+                                        <li>熱源來自板塊擠壓與深部熱流上湧。</li>
+                                        <li>GeoTEX 實測：<strong>150-175°C</strong> (淺層 400-600m 即有高溫)。</li>
+                                        <li><strong>優勢：</strong>水質中性偏鹼，開發難度較低。是目前台灣商轉電廠的主要集中地。</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Core Technologies List -->
-                    <div class="bg-gradient-to-br from-purple-800/50 to-indigo-900/50 rounded-xl p-6 border border-white/10">
-                        <h3 class="font-bold text-white flex items-center gap-2 text-lg mb-6">
-                            <i data-lucide="cpu" class="w-5 h-5 text-purple-300"></i> 核心技術優勢
-                        </h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 text-purple-100 text-sm">
-                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">1</div>
-                                <span><strong>抗酸水泥/固井技術：</strong> 克服大屯山強酸地質挑戰。</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-purple-100 text-sm">
-                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">2</div>
-                                <span><strong>高溫定向鑽井：</strong> 精準導向地底熱源，提高取熱效率。</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-purple-100 text-sm">
-                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">3</div>
-                                <span><strong>抗高溫鑽井液：</strong> 確保在極端高溫下鑽探作業順利。</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-purple-100 text-sm">
-                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">4</div>
-                                <span><strong>儲集層取熱工程：</strong> 優化地下熱水汽的抽取與回注循環。</span>
-                            </li>
-                        </ul>
+                    <!-- Power Plants Table -->
+                    <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-cyan-600"></i> 主要營運電廠 (2025)
+                    </h3>
+                    <div class="overflow-x-auto mb-12 rounded-xl border border-slate-200 shadow-sm">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-cyan-50 text-cyan-800 font-semibold border-b border-cyan-100">
+                                <tr>
+                                    <th class="py-3 px-4">電廠名稱</th>
+                                    <th class="py-3 px-4">地點</th>
+                                    <th class="py-3 px-4">容量</th>
+                                    <th class="py-3 px-4">類型</th>
+                                    <th class="py-3 px-4">備註</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 bg-white">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-slate-800">清水 (Qingshui)</td>
+                                    <td class="py-3 px-4 text-slate-600">宜蘭縣</td>
+                                    <td class="py-3 px-4 font-mono text-slate-600">4.2 MW</td>
+                                    <td class="py-3 px-4 text-slate-600">雙循環</td>
+                                    <td class="py-3 px-4 text-xs text-slate-500">指標性計畫；供應約 1 萬戶家庭。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-slate-800">仁澤 (Renze)</td>
+                                    <td class="py-3 px-4 text-slate-600">宜蘭縣</td>
+                                    <td class="py-3 px-4 font-mono text-slate-600">0.84 MW</td>
+                                    <td class="py-3 px-4 text-slate-600">雙循環</td>
+                                    <td class="py-3 px-4 text-xs text-slate-500">台電營運；2023 年啟用。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-bold text-slate-800">四磺子坪</td>
+                                    <td class="py-3 px-4 text-slate-600">新北市</td>
+                                    <td class="py-3 px-4 font-mono text-slate-600">~1-2 MW</td>
+                                    <td class="py-3 px-4 text-slate-600">雙循環</td>
+                                    <td class="py-3 px-4 text-xs text-slate-500">預計 2026 年擴建至 +4 MW。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Policy & Developments Grid -->
+                    <div class="grid md:grid-cols-2 gap-8 mb-12">
+                        <!-- Targets -->
+                        <div class="bg-white border border-slate-200 p-6 rounded-xl shadow-sm">
+                            <h4 class="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                <i data-lucide="target" class="w-5 h-5 text-cyan-600"></i> 政府目標 (經濟部)
+                            </h4>
+                            <ul class="space-y-4 relative border-l border-slate-200 ml-2 pl-6">
+                                <li class="relative">
+                                    <div class="absolute -left-[29px] bg-cyan-100 w-4 h-4 rounded-full border border-cyan-300"></div>
+                                    <strong class="text-sm block text-slate-800">2025: 20 MW</strong>
+                                    <p class="text-xs text-slate-500">修正後目標；專注於新併網與示範計畫的成功。</p>
+                                </li>
+                                <li class="relative">
+                                    <div class="absolute -left-[29px] bg-cyan-100 w-4 h-4 rounded-full border border-cyan-300"></div>
+                                    <strong class="text-sm block text-slate-800">2030: 1.2 – 1.5 GW</strong>
+                                    <p class="text-xs text-slate-500">反映深層探勘 (3-4 km) 樂觀預期的大幅躍進。</p>
+                                </li>
+                                <li class="relative">
+                                    <div class="absolute -left-[29px] bg-cyan-500 w-4 h-4 rounded-full border border-cyan-300 shadow-sm shadow-cyan-200"></div>
+                                    <strong class="text-sm block text-slate-800">2050: 6 GW</strong>
+                                    <p class="text-xs text-slate-500">滿足預期電力需求的 15-20%。</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 2025 Developments -->
+                        <div class="bg-slate-900 text-slate-300 p-6 rounded-xl">
+                            <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                                <i data-lucide="newspaper" class="w-5 h-5 text-cyan-400"></i> 2025 年亮點
+                            </h4>
+                            <ul class="space-y-3 text-sm">
+                                <li class="pb-2 border-b border-slate-700">
+                                    <strong class="text-cyan-400 block mb-1">企業購電協議 (Google)</strong>
+                                    與 Baseload Capital 簽署台灣首個地熱 PPA (2025年4月)，為資料中心提供「24/7 潔淨能源」。
+                                </li>
+                                <li class="pb-2 border-b border-slate-700">
+                                    <strong class="text-cyan-400 block mb-1">深層鑽探</strong>
+                                    台灣中油在宜蘭鑽探 4,000 公尺深井 (2025年10月)，目標鎖定深層熱源。
+                                </li>
+                                <li>
+                                    <strong class="text-cyan-400 block mb-1">國際合作</strong>
+                                    台電與台泥 (TCC) 攜手國際團隊在花蓮/南投進行探勘。
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Challenges & Outlook -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-orange-50 p-5 rounded-xl border border-orange-100">
+                            <h4 class="font-bold text-orange-800 mb-2 text-sm flex items-center gap-2">
+                                <i data-lucide="triangle-alert" class="w-4 h-4"></i> 挑戰
+                            </h4>
+                            <p class="text-xs text-orange-900 leading-relaxed">
+                                <strong>高成本：</strong> 每口井鑽探成本約 1000-2000 萬美元，且單井輸出較低 (1 MW)。
+                                <br><strong>場址限制：</strong> 許多潛力區與國家公園或原住民保留地重疊。
+                            </p>
+                        </div>
+                        <div class="bg-cyan-50 p-5 rounded-xl border border-cyan-100">
+                            <h4 class="font-bold text-cyan-800 mb-2 text-sm flex items-center gap-2">
+                                <i data-lucide="telescope" class="w-4 h-4"></i> 未來展望
+                            </h4>
+                            <p class="text-xs text-cyan-900 leading-relaxed">
+                                預計 <strong>2030 年成長 10 倍</strong>。新興趨勢包括 EGS 試點和鋰提取。隨著 Google 的投入，台灣有望成為亞洲地熱中心。
+                            </p>
+                        </div>
                     </div>
 
                 </div>
