@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地球能量系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* 各區塊的主題漸層 */
+        .solar-gradient { background: linear-gradient(135deg, #fef9c3 0%, #fef3c7 100%); }
+        .core-gradient { background: linear-gradient(135deg, #fee2e2 0%, #ffedd5 100%); }
+        .magma-gradient { background: linear-gradient(180deg, #1a0505 0%, #450a0a 100%); color: white; }
+        .deep-gradient { background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%); }
+        .transport-gradient { background: linear-gradient(135deg, #ffedd5 0%, #fff7ed 100%); }
+        .power-gradient { background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); }
+        .taiwan-gradient { background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%); }
+        .tectonic-gradient { background: linear-gradient(135deg, #334155 0%, #475569 100%); color: #f8fafc; }
+        .geotex-gradient { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; }
+        
+        /* 新增：結元能源企業風格 (紫金) */
+        .jieyuan-gradient { 
+            background: linear-gradient(135deg, #2e1065 0%, #4c1d95 100%); 
+            color: #f3e8ff;
+        }
+
+        /* 最終總結頁：深海/科學藍 */
+        .finale-gradient { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+            color: #e2e8f0;
+        }
+        
+        .hot-text {
+            background: linear-gradient(to right, #fbbf24, #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* 直方圖動畫 */
+        .hist-bar { transition: height 1s ease-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- 導覽列 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
+                <i data-lucide="globe" class="text-blue-600"></i>
+                地球能量系統
+            </h1>
+            <nav class="hidden xl:flex gap-3 text-sm font-medium text-slate-600">
+                <a href="#internal" class="hover:text-red-600 transition">內部熱能</a>
+                <a href="#budget" class="hover:text-emerald-600 transition">能量收支</a>
+                <a href="#heat-distribution" class="hover:text-red-600 transition font-bold">熱分布</a>
+                <a href="#temp-profile" class="hover:text-slate-900 transition">溫度測量</a>
+                <a href="#transport" class="hover:text-orange-600 transition">熱傳輸</a>
+                <a href="#geothermal" class="hover:text-teal-600 transition">地熱發電</a>
+                <a href="#taiwan" class="hover:text-cyan-600 transition">聚焦台灣</a>
+                <a href="#geotex" class="hover:text-sky-600 transition font-bold">GeoTEX</a>
+                <a href="#jieyuan" class="hover:text-purple-600 transition font-bold">產業實例</a>
+                <a href="#tectonics" class="hover:text-slate-800 transition font-semibold">板塊驅動</a>
+                <a href="#finale" class="hover:text-blue-600 transition font-bold border-b-2 border-blue-600">總結</a>
+            </nav>
+            <button class="xl:hidden p-2 text-slate-600">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- 1. Intro -->
+        <section class="text-center max-w-2xl mx-auto">
+            <h2 class="text-4xl font-bold mb-6 text-slate-900">兩種能量的故事</h2>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                地球受兩種截然不同的能量來源影響。<span class="font-semibold text-yellow-600">太陽輻射</span>主宰地表，而<span class="font-semibold text-red-600">內部熱能</span>則是驅動地球深層運作的引擎。
+            </p>
+        </section>
+
+        <!-- 2. Internal Heat Card -->
+        <div class="grid grid-cols-1 gap-8 max-w-2xl mx-auto">
+            <article id="internal" class="core-gradient rounded-2xl p-8 border border-red-100 shadow-sm relative overflow-hidden group hover:shadow-md transition">
+                <div class="absolute bottom-0 right-0 -mb-4 -mr-4 w-32 h-32 bg-red-300 rounded-full opacity-20 blur-2xl"></div>
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="p-3 bg-red-100 rounded-lg text-red-700">
+                        <i data-lucide="flame" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900">內部熱能 (Internal Heat)</h3>
+                </div>
+                <p class="mb-6 font-medium text-slate-700">地球動力學的引擎</p>
+                <ul class="space-y-3 text-slate-700">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="activity" class="w-5 h-5 text-red-500 mt-1 shrink-0"></i>
+                        <span>驅動<strong>地球內部過程</strong>，如板塊構造運動和地磁場的產生。</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="layers" class="w-5 h-5 text-amber-700 mt-1 shrink-0"></i>
+                        <span><strong>地熱通量 (Geothermal Flux)：</strong> 源自地球本體最重要的能量形式。</span>
+                    </li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- 3. Heat Distribution (Magma Page) -->
+        <section id="heat-distribution" class="scroll-mt-24">
+            <div class="magma-gradient rounded-3xl overflow-hidden shadow-2xl ring-4 ring-red-900/20">
+                <div class="p-8 md:p-12 relative">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-red-600 rounded-full mix-blend-overlay filter blur-[100px] opacity-20 animate-pulse"></div>
+                    <div class="text-center mb-12 relative z-10">
+                        <span class="inline-block py-1 px-3 rounded-full bg-red-900/50 text-red-200 border border-red-700 text-xs font-bold tracking-widest mb-4">核心觀念轉折</span>
+                        <h2 class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">地球內部的熱分布</h2>
+                        <p class="text-xl text-red-200 font-light">從表面的涼爽，到核心的煉獄</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-12 mb-16 relative z-10">
+                        <div class="text-center">
+                            <div class="text-sm text-red-300 uppercase tracking-wide mb-1">地表溫度梯度</div>
+                            <div class="text-4xl font-mono font-bold text-white">30 K<span class="text-base text-red-400">/km</span></div>
+                        </div>
+                        <div class="hidden md:block text-red-500 transform rotate-90 md:rotate-0"><i data-lucide="arrow-right" class="w-8 h-8"></i></div>
+                        <div class="text-center">
+                            <div class="text-sm text-red-300 uppercase tracking-wide mb-1">地核溫度</div>
+                            <div class="text-5xl font-mono font-black hot-text">~6,000 K</div>
+                            <div class="text-xs text-red-400 mt-1">(約 5,700°C，修正早期估算)</div>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-12 items-start relative z-10">
+                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2"><i data-lucide="circle-dot" class="w-5 h-5 text-red-500"></i> 地球層狀結構與溫度</h3>
+                            <div class="relative w-64 h-64 mx-auto my-8">
+                                <div class="absolute inset-0 rounded-full border-[3px] border-slate-400 bg-slate-800 flex items-center justify-center shadow-lg group">
+                                    <span class="absolute -top-8 text-xs font-bold text-slate-300 bg-slate-900 px-2 py-1 rounded">地殼 < 200°C</span>
+                                    <div class="w-56 h-56 rounded-full bg-gradient-to-br from-orange-700 to-red-900 flex items-center justify-center shadow-inner relative group-hover:scale-[0.98] transition-transform duration-500">
+                                        <span class="absolute top-4 text-xs font-bold text-orange-200">地函 3000°C</span>
+                                        <div class="w-32 h-32 rounded-full bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center shadow-[0_0_20px_rgba(234,179,8,0.6)] animate-pulse">
+                                            <span class="text-[10px] font-bold text-red-900 translate-y-[-20px]">外核 (液態)</span>
+                                            <div class="w-12 h-12 rounded-full bg-white shadow-[0_0_15px_white] flex items-center justify-center absolute"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 h-full">
+                            <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2"><i data-lucide="trending-up" class="w-5 h-5 text-red-500"></i> 深度-溫度曲線</h3>
+                            <div class="relative h-64 w-full bg-slate-900/50 rounded-lg border border-white/5 p-4 mb-4">
+                                <div class="absolute left-2 top-2 text-xs text-slate-500">深度 (km)</div>
+                                <div class="absolute right-2 bottom-2 text-xs text-slate-500">溫度 (°C)</div>
+                                <svg viewBox="0 0 400 300" class="w-full h-full overflow-visible">
+                                    <line x1="40" y1="20" x2="40" y2="260" stroke="#334155" stroke-width="1" />
+                                    <line x1="40" y1="260" x2="380" y2="260" stroke="#334155" stroke-width="1" />
+                                    <path d="M 40 20 L 100 50 C 120 100, 180 120, 200 150 L 220 200 L 350 250" fill="none" stroke="url(#heatGradient)" stroke-width="4" stroke-linecap="round" />
+                                    <defs>
+                                        <linearGradient id="heatGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#ef4444;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="40" cy="20" r="4" fill="#fbbf24" />
+                                    <circle cx="100" cy="50" r="4" fill="#f59e0b" />
+                                    <circle cx="350" cy="250" r="6" fill="#dc2626" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 bg-white/10 border-l-4 border-yellow-500 p-6 rounded-r-xl relative z-10">
+                        <p class="text-xl md:text-2xl font-serif italic text-white leading-relaxed">
+                            「你腳下這顆星球，表面看起來涼涼的，但只要往下挖幾十公里，就比熔爐還熱；再往下挖幾千公里，<span class="text-yellow-400 font-bold">比太陽表面還熱！</span>」
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Energy Budget Table -->
+        <section id="budget" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-8 border-b border-slate-100">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="bg-emerald-100 p-2 rounded-lg text-emerald-600"><i data-lucide="table-2" class="w-5 h-5"></i></div>
+                    <h3 class="text-xl font-bold text-slate-800">年度能量收支估算</h3>
+                </div>
+                <p class="text-slate-600">地球能量預算中各主要來源的比較。</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm md:text-base">
+                    <thead class="bg-slate-50 text-slate-600 font-semibold border-b border-slate-200">
+                        <tr>
+                            <th class="py-4 px-6 w-1/2">能量來源</th>
+                            <th class="py-4 px-6">年能量 [焦耳 J]</th>
+                            <th class="py-4 px-6">標準化數值</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr class="hover:bg-yellow-50/50 transition bg-yellow-50/30">
+                            <td class="py-4 px-6 font-medium text-slate-800">太陽能的反射與再輻射</td>
+                            <td class="py-4 px-6 font-mono text-slate-600">5.4 × 10<sup>24</sup></td>
+                            <td class="py-4 px-6 font-bold text-yellow-600">≈ 4000</td>
+                        </tr>
+                        <tr class="hover:bg-red-50/50 transition bg-red-50/30">
+                            <td class="py-4 px-6 font-medium text-slate-800">來自地球內部的地熱通量</td>
+                            <td class="py-4 px-6 font-mono text-slate-600">1.4 × 10<sup>21</sup></td>
+                            <td class="py-4 px-6 font-bold text-red-600">1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Thermodynamics -->
+        <section id="thermodynamics" class="space-y-8 pt-8">
+            <div class="text-center">
+                <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">基礎物理學</span>
+                <h2 class="text-3xl font-bold mt-4 text-slate-900">熱力學參數</h2>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-indigo-900 mb-3 flex items-center gap-2"><i data-lucide="thermometer-sun" class="w-5 h-5"></i> 溫度 (Temperature)</h3>
+                    <p class="text-slate-600 mb-4 text-sm">相對於標準的「熱度」定量測量。</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-indigo-900 mb-3 flex items-center gap-2"><i data-lucide="flame-kindling" class="w-5 h-5"></i> 熱 (Heat)</h3>
+                    <p class="text-slate-600 mb-4 text-sm">物體因溫度而擁有的能量形式。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Internal Temp Profile (Graph) -->
+        <section id="temp-profile" class="pt-8">
+            <div class="deep-gradient p-1 rounded-3xl">
+                <div class="bg-white rounded-[20px] p-8 md:p-12">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-3 bg-slate-100 rounded-xl"><i data-lucide="scan-line" class="w-6 h-6 text-slate-700"></i></div>
+                        <div>
+                            <h2 class="text-3xl font-bold text-slate-900">科學測量：如何得知內部溫度？</h2>
+                            <p class="text-slate-500 text-sm">除了推論，我們有科學證據。</p>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                        <div class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
+                            <div class="aspect-[3/4] bg-slate-100 rounded-lg flex items-center justify-center relative overflow-hidden bg-slate-50">
+                                <img src="https://raw.githubusercontent.com/oceanicdayi/Earth_Heat/main/earth_temp_graph.png" onerror="this.onerror=null; this.src='earth_temp_graph.png';" alt="顯示隨深度變化的估計溫度和熔點圖表" class="w-full h-full object-contain">
+                            </div>
+                            <p class="text-xs text-center text-slate-400 mt-2 italic">圖 4.14：地球內部估計溫度與熔點隨深度的變化。</p>
+                        </div>
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-bold text-slate-800">解讀圖表</h3>
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="font-bold text-blue-900 mb-1">溫度 vs. 固相線 (Solidus)</h4>
+                                <p class="text-sm text-blue-800 leading-relaxed">
+                                    圖表繪製了兩條關鍵曲線。<strong class="text-black">粗線</strong>是估計的實際溫度。<span class="text-slate-500">細線</span>是<strong>固相線</strong> (熔點)。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Heat Transport -->
+        <section id="transport" class="pt-8">
+            <div class="transport-gradient p-1 rounded-3xl">
+                <div class="bg-white rounded-[20px] p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">動態地球</span>
+                        <h2 class="text-3xl font-bold mt-4 text-slate-900">熱傳輸與來源</h2>
+                        <p class="text-slate-600 mt-2">熱能如何在地球中移動及其起源。</p>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6 mb-12">
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 mb-2">傳導 (Conduction)</h4>
+                            <p class="text-sm text-slate-600">通過物質接觸傳遞。在<strong>固體物質</strong>中占主導地位。</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-xl border border-orange-200">
+                            <h4 class="font-bold text-slate-900 mb-2">對流 (Convection)</h4>
+                            <p class="text-sm text-slate-700">通過流體運動傳遞。在<strong>地函和液態地核</strong>中占主導地位。</p>
+                        </div>
+                        <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                            <h4 class="font-bold text-slate-900 mb-2">輻射 (Radiation)</h4>
+                            <p class="text-sm text-slate-600">最不重要的過程，僅在地核高溫區顯著。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Geothermal Power -->
+        <section id="geothermal" class="pt-8">
+            <div class="power-gradient p-1 rounded-3xl">
+                <div class="bg-white rounded-[20px] p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">應用地球科學</span>
+                        <h2 class="text-3xl font-bold mt-4 text-slate-900">地熱發電廠</h2>
+                        <p class="text-slate-600 mt-2">利用來自地核和放射性衰變的熱能。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Taiwan Focus -->
+        <section id="taiwan" class="pt-8">
+            <div class="taiwan-gradient p-1 rounded-3xl">
+                <div class="bg-white rounded-[20px] p-8 md:p-12">
+                    <div class="text-center mb-10">
+                        <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">區域聚焦</span>
+                        <h2 class="text-3xl font-bold mt-4 text-slate-900">台灣的地熱能源</h2>
+                        <p class="text-slate-600 mt-2">現況更新：2025 年 11 月</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. GeoTEX Platform -->
+        <section id="geotex" class="pt-8">
+            <div class="geotex-gradient rounded-3xl overflow-hidden shadow-lg p-8 md:p-12">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-8">
+                    <div>
+                        <span class="bg-sky-600 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide">國家級資源</span>
+                        <h2 class="text-3xl font-bold mt-4 text-slate-900">地熱探勘資訊平台 (GeoTEX)</h2>
+                        <p class="text-slate-600 mt-2">經濟部地質調查及礦業管理中心建置的「地熱數位大腦」。</p>
+                    </div>
+                    <a href="https://geotex.geologycloud.tw/main" target="_blank" class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition shadow-sm">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> 前往平台
+                    </a>
+                </div>
+                <!-- Dashboard and Info -->
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Left Info -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="bg-white p-6 rounded-xl border border-sky-100 shadow-sm">
+                            <h3 class="font-bold text-slate-800 mb-4 flex items-center gap-2"><i data-lucide="target" class="w-5 h-5 text-sky-600"></i> 核心使命</h3>
+                            <p class="text-sm text-slate-600"><strong>「探地熱，接地氣」</strong>：整合科技調查，公開地底的熱、通道、水汽三大秘密。</p>
+                        </div>
+                    </div>
+                    <!-- Center Right Dashboard -->
+                    <div class="lg:col-span-2 bg-white p-8 rounded-xl border border-sky-200 shadow-sm relative overflow-hidden">
+                        <div class="flex justify-between items-center mb-6 relative z-10">
+                            <h3 class="font-bold text-slate-900 flex items-center gap-2"><i data-lucide="activity" class="w-5 h-5 text-red-500 animate-pulse"></i> 即時鑽探監測數據 (2025)</h3>
+                        </div>
+                        <div class="space-y-5 relative z-10">
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="font-bold text-slate-700">台北大屯山 (火山區)</span>
+                                    <span class="font-mono text-red-600 font-bold">245°C</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden">
+                                    <div class="bg-gradient-to-r from-orange-400 to-red-600 h-4 rounded-full" style="width: 100%"></div>
+                                    <span class="absolute right-2 top-[1px] text-[10px] text-white font-bold drop-shadow-md">深 1195m</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm mb-1">
+                                    <span class="font-bold text-slate-700">花蓮瑞穗二號井</span>
+                                    <span class="font-mono text-orange-500 font-bold">174°C</span>
+                                </div>
+                                <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden">
+                                    <div class="bg-gradient-to-r from-yellow-400 to-orange-500 h-4 rounded-full" style="width: 71%"></div>
+                                    <span class="absolute left-[73%] top-[1px] text-[10px] text-slate-500">深 478m</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================================ -->
+        <!-- NEW: Jieyuan Energy (Industry Example) -->
+        <!-- ============================================================================ -->
+        <section id="jieyuan" class="pt-8">
+            <div class="jieyuan-gradient rounded-3xl overflow-hidden shadow-xl ring-1 ring-purple-500/50 p-8 md:p-12">
+                
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6 mb-10 border-b border-purple-400/30 pb-8">
+                    <div>
+                        <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide shadow-md">產業先驅</span>
+                        <h2 class="text-3xl font-bold mt-4 text-white tracking-tight">結元能源開發 (Jieyuan Energy)</h2>
+                        <p class="text-purple-200 mt-2 font-light">將捷集團旗下 · 台灣地熱發電領導者</p>
+                    </div>
+                    <a href="https://www.fabulousgroup.com.tw/jy" target="_blank" class="bg-white text-purple-900 hover:bg-purple-100 px-6 py-3 rounded-lg font-bold flex items-center gap-2 transition shadow-lg">
+                        <i data-lucide="external-link" class="w-4 h-4"></i> 訪問官網
+                    </a>
+                </div>
+
+                <!-- Core Vision -->
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 mb-10 border border-white/10">
+                    <div class="flex items-start gap-4">
+                        <div class="bg-purple-500/20 p-3 rounded-lg shrink-0 text-purple-300">
+                            <i data-lucide="lightbulb" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">企業願景與實力</h3>
+                            <p class="text-purple-100 text-sm leading-relaxed">
+                                專注於地熱發電的研究開發與整合創新。目標是成立台灣首座完全商轉的地熱電廠，並推動<strong>「地熱發電技術自主化」</strong>，減少對國外技術的依賴。擁有從探勘、規劃、興建到營運維護的一站式服務能力。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    
+                    <!-- Key Projects -->
+                    <div class="space-y-6">
+                        <h3 class="font-bold text-white flex items-center gap-2 text-lg border-l-4 border-purple-400 pl-3">
+                            指標性專案
+                        </h3>
+                        
+                        <!-- Project 1 -->
+                        <div class="bg-purple-900/40 rounded-lg p-5 border border-purple-500/30 hover:bg-purple-900/60 transition">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-white">宜蘭清水地熱發電 (BOT+ROT)</h4>
+                                <span class="text-xs bg-green-500/20 text-green-300 px-2 py-1 rounded">已商轉</span>
+                            </div>
+                            <p class="text-sm text-purple-200 mb-3">
+                                台灣首座商轉地熱電廠。引進以色列 ORMAT 發電機組，並進行地熱井產能恢復工程。
+                            </p>
+                            <div class="flex gap-2 text-xs text-purple-300">
+                                <span class="bg-white/10 px-2 py-1 rounded">4.2 MW</span>
+                                <span class="bg-white/10 px-2 py-1 rounded">雙循環系統</span>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="bg-purple-900/40 rounded-lg p-5 border border-purple-500/30 hover:bg-purple-900/60 transition">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-white">新北硫磺子坪 (示範區)</h4>
+                                <span class="text-xs bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">開發中</span>
+                            </div>
+                            <p class="text-sm text-purple-200 mb-3">
+                                位於大屯火山區。進行高難度的火山地質探勘，採用 5000M 級鑽機進行深層鑽探。
+                            </p>
+                            <div class="flex gap-2 text-xs text-purple-300">
+                                <span class="bg-white/10 px-2 py-1 rounded">抗酸腐蝕技術</span>
+                                <span class="bg-white/10 px-2 py-1 rounded">產能試驗</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Technologies List -->
+                    <div class="bg-gradient-to-br from-purple-800/50 to-indigo-900/50 rounded-xl p-6 border border-white/10">
+                        <h3 class="font-bold text-white flex items-center gap-2 text-lg mb-6">
+                            <i data-lucide="cpu" class="w-5 h-5 text-purple-300"></i> 核心技術優勢
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center gap-3 text-purple-100 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">1</div>
+                                <span><strong>抗酸水泥/固井技術：</strong> 克服大屯山強酸地質挑戰。</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-purple-100 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">2</div>
+                                <span><strong>高溫定向鑽井：</strong> 精準導向地底熱源，提高取熱效率。</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-purple-100 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">3</div>
+                                <span><strong>抗高溫鑽井液：</strong> 確保在極端高溫下鑽探作業順利。</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-purple-100 text-sm">
+                                <div class="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center shrink-0 text-purple-300 font-bold">4</div>
+                                <span><strong>儲集層取熱工程：</strong> 優化地下熱水汽的抽取與回注循環。</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Plate Tectonics Analysis -->
+        <section id="tectonics" class="pt-8">
+            <div class="tectonic-gradient rounded-3xl overflow-hidden shadow-xl ring-1 ring-slate-600 p-8 md:p-12">
+                <div class="text-center mb-10">
+                    <span class="bg-slate-600 text-slate-200 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide border border-slate-500">深層解析</span>
+                    <h2 class="text-3xl font-bold mt-4 text-white">這份簡報如何用「地球內部熱」來解釋板塊運動？</h2>
+                    <p class="text-slate-300 mt-2 text-sm max-w-3xl mx-auto leading-relaxed">
+                        這份資料完整鋪陳了一個<strong>「熱驅動板塊構造學說」</strong>的邏輯鏈。板塊之所以會動，就是因為地球內部熱還沒散完。
+                    </p>
+                </div>
+                <!-- Table and Summary content... (kept same as before) -->
+                <div class="bg-slate-800/50 rounded-xl border border-slate-600 overflow-hidden mb-10">
+                    <div class="p-4 bg-slate-700/50 border-b border-slate-600 font-bold text-white flex items-center gap-2">
+                        <i data-lucide="link" class="w-4 h-4"></i> 簡報中的「隱藏主軸」
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-slate-300">
+                            <thead class="bg-slate-700 text-slate-200">
+                                <tr>
+                                    <th class="p-4 w-1/4">頁面/主題</th>
+                                    <th class="p-4 w-1/3">關鍵內容</th>
+                                    <th class="p-4">對板塊運動的解釋</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-600">
+                                <tr class="hover:bg-slate-700/30">
+                                    <td class="p-4 font-medium text-white">概論與圖表</td>
+                                    <td class="p-4">板塊示意圖 (Slab Pull + Ridge Push)</td>
+                                    <td class="p-4 text-blue-300">直接給出答案：板塊在動，動能來自地函對流。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-700/30">
+                                    <td class="p-4 font-medium text-white">能量收支</td>
+                                    <td class="p-4">地熱流僅太陽能的 1/4000</td>
+                                    <td class="p-4 text-blue-300">板塊運動不是太陽驅動，而是內部熱主導。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-700/30">
+                                    <td class="p-4 font-medium text-white">熱力學</td>
+                                    <td class="p-4">第一定律 ΔQ = ΔU + ΔW (受熱膨脹)</td>
+                                    <td class="p-4 text-blue-300">地函岩石受熱膨脹變輕上升 → 形成對流圈推動板塊。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-700/30">
+                                    <td class="p-4 font-medium text-white">熱分布 (震撼頁)</td>
+                                    <td class="p-4">地表 30 K/km，地核 6000°C</td>
+                                    <td class="p-4 text-blue-300">建立「下熱上冷」的條件 → 才有足夠能量讓地函岩石對流。</td>
+                                </tr>
+                                <tr class="hover:bg-slate-700/30">
+                                    <td class="p-4 font-medium text-white">熱流來源</td>
+                                    <td class="p-4">85% 海洋熱流來自岩石圈冷卻</td>
+                                    <td class="p-4 text-blue-300 font-bold">最強證據：洋殼年輕 → 冷卻收縮 → 下沉拉動板塊 (Slab Pull)。</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="mt-8 text-center border-t border-slate-600 pt-6">
+                    <p class="text-lg text-white font-serif italic">
+                        「板塊構造是地球自我散熱的一種方式。」<br>
+                        <span class="text-sm text-slate-400 not-italic block mt-2">
+                            只要內部熱還沒完全散失，對流就不會停止，板塊就會一直動下去。
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Grand Finale -->
+        <section id="finale" class="scroll-mt-24">
+            <div class="finale-gradient rounded-3xl overflow-hidden shadow-2xl ring-1 ring-slate-700/50 p-8 md:p-12 text-slate-200">
+                
+                <!-- Header -->
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-slate-700 pb-6">
+                    <div>
+                        <div class="text-blue-400 font-bold tracking-widest uppercase text-sm mb-2">Grand Finale</div>
+                        <h2 class="text-4xl md:text-5xl font-black text-white">主要熱流來源總結</h2>
+                        <p class="text-slate-400 mt-2 text-lg">Main sources of heat flow</p>
+                    </div>
+                    <div class="text-right mt-4 md:mt-0">
+                        <div class="text-sm text-slate-500">全球平均熱流</div>
+                        <div class="text-3xl font-mono font-bold text-white">87 <span class="text-lg text-blue-400">mW/m²</span></div>
+                    </div>
+                </div>
+
+                <!-- Content Grid -->
+                <div class="grid lg:grid-cols-2 gap-12 mb-12">
+                    
+                    <!-- LEFT: Visuals (Map & Histogram) -->
+                    <div class="space-y-8">
+                        
+                        <!-- 1. Heat Map Visualization (Real Image) -->
+                        <div class="bg-slate-800/50 rounded-xl border border-slate-700 p-1 relative overflow-hidden group">
+                            <div class="absolute top-4 left-4 bg-black/60 backdrop-blur px-3 py-1 rounded text-xs font-bold text-white z-10">全球地表熱流分布圖</div>
+                            
+                            <!-- Image Container -->
+                            <div class="aspect-video w-full bg-slate-900 relative flex items-center justify-center overflow-hidden rounded-lg">
+                                <img 
+                                    src="https://raw.githubusercontent.com/oceanicdayi/Earth_Heat/main/heat_earth.png" 
+                                    onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png';" 
+                                    alt="全球地表熱流分布圖" 
+                                    class="w-full h-full object-cover hover:scale-105 transition duration-700"
+                                >
+                            </div>
+
+                            <!-- Image Explanation -->
+                            <div class="p-4 bg-slate-900/80 text-xs leading-relaxed border-t border-slate-700">
+                                <strong class="text-blue-300 block mb-1 text-sm">圖表解讀：</strong>
+                                這張圖顯示了地表熱流的強烈對比：
+                                <ul class="mt-2 space-y-1 list-disc list-inside text-slate-400">
+                                    <li><span class="text-red-400 font-bold">紅色區域 (>240 mW/m²)</span>：沿著<strong>中洋脊</strong>分佈。這是新生的海洋岩石圈，熱量主要來自高溫岩漿的冷卻。</li>
+                                    <li><span class="text-blue-400 font-bold">藍色區域 (<40 mW/m²)</span>：位於古老的<strong>大陸地盾</strong>（如加拿大、西伯利亞、澳洲）。這裡的地殼非常穩定，熱流極低，主要依靠岩石內的放射性元素微弱發熱。</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 2. Histogram (SVG Chart) -->
+                        <div class="bg-slate-800/50 rounded-xl border border-slate-700 p-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <h4 class="font-bold text-white flex items-center gap-2"><i data-lucide="bar-chart-2" class="w-4 h-4 text-blue-400"></i> 熱流觀測值分布</h4>
+                                <div class="flex gap-3 text-xs">
+                                    <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-blue-500"></div>海洋 (~101)</span>
+                                    <span class="flex items-center gap-1"><div class="w-2 h-2 rounded-full bg-green-500"></div>大陸 (~65)</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom Histogram SVG -->
+                            <div class="relative h-48 w-full">
+                                <svg viewBox="0 0 300 150" class="w-full h-full overflow-visible">
+                                    <!-- Axes -->
+                                    <line x1="0" y1="150" x2="300" y2="150" stroke="#475569" stroke-width="1"/>
+                                    
+                                    <!-- Continent Curve (Peak ~60) -->
+                                    <path d="M 0 150 Q 40 150, 60 50 Q 80 150, 150 150" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-width="2"/>
+                                    <!-- Ocean Curve (Peak ~100) -->
+                                    <path d="M 20 150 Q 80 150, 100 20 Q 120 150, 250 150" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2"/>
+                                    
+                                    <!-- Mean Markers -->
+                                    <line x1="60" y1="50" x2="60" y2="150" stroke="#22c55e" stroke-dasharray="4" stroke-width="1"/>
+                                    <text x="60" y="45" fill="#22c55e" font-size="10" text-anchor="middle">65</text>
+                                    
+                                    <line x1="100" y1="20" x2="100" y2="150" stroke="#3b82f6" stroke-dasharray="4" stroke-width="1"/>
+                                    <text x="100" y="15" fill="#3b82f6" font-size="10" text-anchor="middle">101</text>
+                                    
+                                    <text x="150" y="165" fill="#64748b" font-size="10" text-anchor="middle">熱流 (mW/m²)</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Data Table & Conclusions -->
+                    <div class="flex flex-col h-full">
+                        
+                        <!-- The Table -->
+                        <div class="bg-slate-800 rounded-xl border border-slate-600 overflow-hidden mb-8">
+                            <table class="w-full text-sm">
+                                <thead class="bg-slate-900 text-slate-300">
+                                    <tr>
+                                        <th class="p-4 text-left">熱源 (Heat Source)</th>
+                                        <th class="p-4 text-center text-green-400">大陸 (%)</th>
+                                        <th class="p-4 text-center text-blue-400">海洋 (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-700 text-slate-300">
+                                    <tr class="hover:bg-slate-700/50 transition">
+                                        <td class="p-4 font-medium">岩石圈冷卻 (Cooling)</td>
+                                        <td class="p-4 text-center">20</td>
+                                        <td class="p-4 text-center font-bold text-white bg-blue-900/30">85</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-700/50 transition">
+                                        <td class="p-4 font-medium">岩石圈以下熱流 (Below Lithosphere)</td>
+                                        <td class="p-4 text-center text-slate-500">25</td>
+                                        <td class="p-4 text-center text-slate-500">10</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-700/50 transition">
+                                        <td class="p-4 font-medium">放射性生熱: 上地殼 (Upper Crust)</td>
+                                        <td class="p-4 text-center font-bold text-white bg-green-900/30">55</td>
+                                        <td class="p-4 text-center text-slate-500">—</td>
+                                    </tr>
+                                    <tr class="hover:bg-slate-700/50 transition">
+                                        <td class="p-4 font-medium">放射性生熱: 其餘岩石圈</td>
+                                        <td class="p-4 text-center">15</td>
+                                        <td class="p-4 text-center text-slate-500">—</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Shocking Conclusions Cards -->
+                        <div class="space-y-4 flex-grow">
+                            <div class="bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                                <h5 class="font-bold text-blue-300 mb-1">1. 海洋熱流全靠「自己冷卻」</h5>
+                                <p class="text-sm text-slate-400">85% 來自年輕洋殼從洋中脊出生後的冷卻收縮。這正是板塊運動最強引擎 (Slab Pull) 的來源。</p>
+                            </div>
+                            <div class="bg-green-900/20 border-l-4 border-green-500 p-4 rounded-r-lg">
+                                <h5 class="font-bold text-green-300 mb-1">2. 大陸熱流一半以上是「自己發熱」</h5>
+                                <p class="text-sm text-slate-400">55% 來自上地殼中的鈾、釷、鉀衰變。大陸的穩定是因為熱能自產，而非來自下方。</p>
+                            </div>
+                            <div class="bg-purple-900/20 border-l-4 border-purple-500 p-4 rounded-r-lg">
+                                <h5 class="font-bold text-purple-300 mb-1">3. 深部地函的貢獻少得可憐</h5>
+                                <p class="text-sm text-slate-400">僅佔 10-25%。雖然地函對流驅動板塊，但它直接傳到地表的熱其實非常少。</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Final Message Quote -->
+                <div class="text-center border-t border-slate-700 pt-10 mt-4">
+                    <p class="text-xl md:text-2xl font-serif italic text-white leading-relaxed max-w-4xl mx-auto">
+                        「地球內部雖然有 6000 °C 的超高溫，但真正決定你腳下熱不熱的，不是地核，而是：<br>
+                        你站在<span class="text-blue-400 font-bold">年輕的海洋板塊</span>上（還在發燙），<br>
+                        還是<span class="text-green-400 font-bold">古老的大陸板塊</span>上（靠自己發熱）？」
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="mb-2 font-medium text-slate-200">地球科學摘要</p>
+            <p class="text-sm">基於第 4.2.5 節關於太陽能、地熱與熱力學原理。</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
