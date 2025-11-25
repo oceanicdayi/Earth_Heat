@@ -113,10 +113,6 @@ https://gemini.google.com/share/34d1c20498ae
 
 ## 測驗專區（共 11 題單選題）
 
-含經典陷阱題：「地表梯度 30 °C/km × 6371 km = 19 萬 °C，為什麼地核只有 6000 °C？」  
-答案：地函發生高效熱對流，把熱量帶走，使溫度上升變慢
-
-[下載完整題庫 PDF（附解析）](https://oceanicdayi.github.io/Earth_Heat/quiz/地球的熱_11題單選題.pdf)
 
 ## 貢獻方式
 
