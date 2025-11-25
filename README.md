@@ -111,9 +111,8 @@ https://gemini.google.com/share/34d1c20498ae
 - 政府目標：2035 年 300 MW，2050 年 6 GW
 - 主要熱區：大屯火山群、宜蘭礁溪、花東縱谷、台東紅葉
 
-## 測驗專區（共 11 題單選題）
-
-
+## 測驗專區（共 8 題單選題）
+https://eeclass.utaipei.edu.tw/course/feedback/1138
 ## 貢獻方式
 
 歡迎一起完善：
