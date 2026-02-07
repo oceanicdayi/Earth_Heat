@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 # Configuration
-HF_TOKEN = "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"
+HF_TOKEN = os.getenv("HF_TOKEN", "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")
 SPACE_NAME = "Earth_Heat"
 HF_USERNAME = "oceanicdayi"  # Update this with your actual HF username
 SPACE_REPO = f"{HF_USERNAME}/{SPACE_NAME}"
