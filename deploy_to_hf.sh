@@ -2,11 +2,19 @@
 
 # Hugging Face Spaces Deployment Script
 # This script deploys the Earth_Heat application to Hugging Face Spaces
+#
+# SECURITY WARNING: This script contains a hardcoded token for initial deployment.
+# After first deployment, consider:
+# 1. Revoking this token at https://huggingface.co/settings/tokens
+# 2. Creating a new token with appropriate permissions
+# 3. Using environment variable: export HF_TOKEN="your_new_token"
+# 4. Removing the hardcoded default from this script
 
 set -e
 
 # Configuration
-HF_TOKEN="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"
+# Token from environment variable OR hardcoded default (CHANGE THIS AFTER FIRST USE!)
+HF_TOKEN="${HF_TOKEN:-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}"
 SPACE_NAME="Earth_Heat"
 HF_USERNAME="oceanicdayi"  # You may need to update this with your actual HF username
 SPACE_URL="https://huggingface.co/spaces/${HF_USERNAME}/${SPACE_NAME}"

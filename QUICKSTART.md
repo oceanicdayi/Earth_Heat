@@ -1,5 +1,12 @@
 # Quick Deploy to Hugging Face Spaces 🚀
 
+## ⚠️ Security First
+
+The scripts contain a hardcoded token for convenience. **After first deployment:**
+1. Revoke token at https://huggingface.co/settings/tokens
+2. Create new token with minimal permissions
+3. Use `export HF_TOKEN="your_new_token"` for future deployments
+
 ## One-Command Deploy
 
 ```bash

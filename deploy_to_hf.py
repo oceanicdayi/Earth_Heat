@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """
 Deployment script for uploading Earth_Heat to Hugging Face Spaces
+
+SECURITY WARNING: This script contains a hardcoded token for initial deployment.
+After first deployment, consider:
+1. Revoking this token at https://huggingface.co/settings/tokens
+2. Creating a new token with appropriate permissions
+3. Using environment variable: export HF_TOKEN="your_new_token"
+4. Removing the hardcoded default from this script
 """
 import os
 import shutil
@@ -8,6 +15,7 @@ import subprocess
 from pathlib import Path
 
 # Configuration
+# Token from environment variable OR hardcoded default (CHANGE THIS AFTER FIRST USE!)
 HF_TOKEN = os.getenv("HF_TOKEN", "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")
 SPACE_NAME = "Earth_Heat"
 HF_USERNAME = "oceanicdayi"  # Update this with your actual HF username

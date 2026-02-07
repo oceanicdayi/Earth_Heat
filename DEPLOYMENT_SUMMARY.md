@@ -42,25 +42,38 @@ python deploy_to_hf.py
 
 ### Method 4: Git Push
 ```bash
+# Set token as environment variable (more secure)
+export HF_TOKEN="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"
+
 git clone https://huggingface.co/spaces/oceanicdayi/Earth_Heat
 cd Earth_Heat
 # Copy files: app.py, requirements.txt, index.html, *.png
 git add .
 git commit -m "Deploy Earth_Heat"
-git push https://oauth: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@huggingface.co/spaces/oceanicdayi/Earth_Heat main
+git push https://oauth:${HF_TOKEN}@huggingface.co/spaces/oceanicdayi/Earth_Heat main
 ```
+
+**Security Note:** Using environment variable prevents token from being saved in shell history.
 
 ## 🔑 Token Configuration
 
-The deployment scripts use the token you provided:
+**⚠️ Security Important:**
+
+The deployment scripts include the token you provided for initial deployment convenience:
 ```
 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
 ```
 
+**After First Deployment:**
+1. ⚠️ Revoke this token at https://huggingface.co/settings/tokens
+2. 🔑 Create a new token with appropriate permissions
+3. 🔒 Use environment variable: `export HF_TOKEN="your_new_token"`
+4. ✂️ Remove hardcoded token from scripts
+
 This token is:
-- ✅ Pre-configured in deploy_to_hf.py
-- ✅ Pre-configured in deploy_to_hf.sh
-- ⚠️ Should be added as GitHub secret for Actions workflow
+- ✅ Pre-configured in deploy_to_hf.py (with security warning)
+- ✅ Pre-configured in deploy_to_hf.sh (with security warning)
+- ⚠️ Should be added as GitHub secret for Actions workflow (never commit directly)
 
 ## 📍 Your Space URL
 

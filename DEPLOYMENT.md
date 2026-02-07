@@ -2,10 +2,21 @@
 
 This guide explains how to deploy the Earth_Heat application to Hugging Face Spaces.
 
+## ⚠️ Security Notice
+
+The deployment scripts contain a hardcoded Hugging Face token for initial deployment convenience. 
+
+**Important Security Steps:**
+1. ✅ Use the scripts for initial deployment
+2. ⚠️ After successful deployment, revoke the token at https://huggingface.co/settings/tokens
+3. 🔑 Create a new token with appropriate permissions
+4. 🔒 For future deployments, use environment variable: `export HF_TOKEN="your_new_token"`
+5. ✂️ Remove the hardcoded token from the scripts
+
 ## Prerequisites
 
 - Hugging Face account
-- Your Hugging Face access token: `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`
+- Your Hugging Face access token (provided token: `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`)
 
 ## Deployment Options
 
@@ -103,8 +114,11 @@ MIT © 2025 OceanicDayi
    ```bash
    git add .
    git commit -m "Deploy Earth_Heat application"
-   git push https://oauth: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@huggingface.co/spaces/oceanicdayi/Earth_Heat main
+   # Use environment variable for token (more secure)
+   git push https://oauth:${HF_TOKEN}@huggingface.co/spaces/oceanicdayi/Earth_Heat main
    ```
+   
+   **Note:** Set HF_TOKEN environment variable instead of hardcoding the token in commands.
 
 ### Option 4: Using Bash Script
 
@@ -150,10 +164,20 @@ The application uses the following key files:
 
 ## Security Note
 
-The token provided (`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`) has been hardcoded in the deployment scripts for convenience. Consider:
-- Using environment variables for production
-- Revoking the token after initial deployment
-- Creating a new token with appropriate permissions
+**⚠️ Important Token Security Information:**
+
+The token provided (`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`) has been included in deployment scripts for initial convenience.
+
+**Best Practices:**
+1. ✅ Use for initial deployment
+2. ⚠️ Immediately revoke at https://huggingface.co/settings/tokens after first use
+3. 🔑 Create a new token with minimal required permissions
+4. 🔒 For future use, set as environment variable: `export HF_TOKEN="your_new_token"`
+5. ✂️ Remove hardcoded tokens from scripts before committing to public repositories
+
+**For GitHub Actions:**
+- Store token as repository secret (Settings → Secrets → Actions)
+- Never commit tokens directly to the repository
 
 ## Support
 
