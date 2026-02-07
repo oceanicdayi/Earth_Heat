@@ -4,7 +4,8 @@ https://oceanicdayi.github.io/Earth_Heat/
 https://gemini.google.com/share/34d1c20498ae
 
 [![原始簡報 PDF](https://img.shields.io/badge/原始簡報-PDF-red?style=for-the-badge&logo=adobe-acrobat)](https://github.com/oceanicdayi/Earth_Heat/blob/main/%E5%9C%B0%E7%90%83%E7%9A%84%E7%86%B1%E5%88%86%E5%B8%83.pdf)  
-[![線上完整版](https://img.shields.io/badge/線上完整版-GitHub_Pages-green?style=for-the-badge&logo=github)](https://oceanicdayi.github.io/Earth_Heat/)
+[![線上完整版](https://img.shields.io/badge/線上完整版-GitHub_Pages-green?style=for-the-badge&logo=github)](https://oceanicdayi.github.io/Earth_Heat/)  
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Spaces-yellow?style=for-the-badge)](https://huggingface.co/spaces/oceanicdayi/Earth_Heat)
 
 經典 13 頁地球科學簡報完整數位化 + 詳細中文解說 + 最新台灣地熱資訊  
 適合高中、大學地球科學課程、教師備課、自學者使用
@@ -113,6 +114,24 @@ https://gemini.google.com/share/34d1c20498ae
 
 ## 測驗專區（共 8 題單選題）
 https://eeclass.utaipei.edu.tw/course/feedback/1138
+
+## 🚀 部署到 Hugging Face Spaces
+
+本專案已支援一鍵部署到 Hugging Face Spaces！
+
+### 快速部署
+
+```bash
+python deploy_to_hf.py
+```
+
+部署完成後，您的應用將可在以下網址訪問：
+https://huggingface.co/spaces/oceanicdayi/Earth_Heat
+
+詳細部署說明請參考：
+- [快速開始](QUICKSTART.md) - 一鍵部署指南
+- [完整部署文檔](DEPLOYMENT.md) - 詳細部署選項和故障排除
+
 ## 貢獻方式
 
 歡迎一起完善：
