@@ -9,6 +9,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read  # Required to checkout the repository
     
     steps:
       - name: Checkout repository
