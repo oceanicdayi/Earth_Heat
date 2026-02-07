@@ -62,7 +62,7 @@ emoji: 🌍
 colorFrom: red
 colorTo: orange
 sdk: gradio
-sdk_version: 4.44.0
+sdk_version: 5.23.0
 app_file: app.py
 pinned: false
 license: mit
@@ -158,7 +158,7 @@ Simply push new changes to the Space repository and it will automatically rebuil
 The application uses the following key files:
 
 - **app.py**: Gradio interface that wraps the HTML content
-- **requirements.txt**: Python dependencies (Gradio 4.44.0)
+- **requirements.txt**: Python dependencies (Gradio 5.23.0)
 - **index.html**: The main content - a comprehensive Earth heat visualization
 - **Images**: earth_temp_graph.png, heat_earth.png
 

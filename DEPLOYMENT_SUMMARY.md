@@ -7,7 +7,7 @@ Your Earth_Heat project is now fully configured for deployment to Hugging Face S
 ### 1. Core Application Files
 
 - **app.py** - Gradio application wrapper for your HTML content
-- **requirements.txt** - Python dependencies (Gradio 4.44.0)
+- **requirements.txt** - Python dependencies (Gradio 5.23.0)
 - **.gitignore** - Excludes temporary files from deployment
 
 ### 2. Deployment Scripts (3 options)
